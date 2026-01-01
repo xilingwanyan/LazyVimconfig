@@ -141,7 +141,13 @@ return {
             },
             extensions = { "neo-tree", "lazy", "fzf" },
             winbar = {
-                lualine_c = {},
+                lualine_a = {
+                    function()
+                        return ""
+                    end,
+                },
+                lualine_c = {
+                },
             },
         }
 

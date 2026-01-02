@@ -23,4 +23,4 @@ vim.opt.listchars = {
 	precedes = "<",
 	nbsp = "+",
 }
-vim.g.autoformat_timeout = 36000
+

@@ -1,8 +1,10 @@
+
+-- better yank/paste
 return {
   "gbprod/yanky.nvim",
   keys = {
     {
-      "<leader>hp",
+      "<leader>p",
       function()
         if LazyVim.pick.picker.name == "telescope" then
           require("telescope").extensions.yank_history.yank_history({})
@@ -15,6 +17,9 @@ return {
       mode = { "n", "x" },
       desc = "Open Yank History",
     },
+
+    { "<leader>p", '"+p', mode = { "n", "x" }, desc = "Paste from Clipboard" },
+
         -- stylua: ignore
     { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank Text" },
     { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put Text After Cursor" },
@@ -35,3 +40,4 @@ return {
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put Before Applying a Filter" },
   },
 }
+

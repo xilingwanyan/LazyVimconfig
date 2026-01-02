@@ -1,11 +1,12 @@
 return {
-  {
-    "xilingwanyan/onedark.nvim",
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "onedark",
+    {
+        "xilingwanyan/onedarkpro.nvim",
+        priority = 1000,
     },
-  },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "xlwydark",
+        },
+    },
 }

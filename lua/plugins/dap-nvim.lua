@@ -2,29 +2,6 @@ return {
     {
         "mfussenegger/nvim-dap",
         keys = {
-            -- 1. 覆盖或新增你想要的快捷键
-            {
-                "<leader>do",
-                function()
-                    require("dap").step_out()
-                end,
-                desc = "Step Out",
-            },
-            {
-                "<leader>dn",
-                function()
-                    require("dap").step_over()
-                end,
-                desc = "Step Over (Next)",
-            },
-            {
-                "<leader>dq",
-                function()
-                    require("dap").terminate()
-                end,
-                desc = "Terminate",
-            },
-
             {
                 "<leader>dv",
                 function()

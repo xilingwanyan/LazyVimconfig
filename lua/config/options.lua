@@ -16,6 +16,7 @@ vim.opt.list = true
 vim.opt.shell = "/data/data/com.termux/files/usr/bin/bash"
 vim.opt.clipboard = ""
 vim.opt.numberwidth = 4
+vim.g.autoformat = false
 vim.opt.listchars = {
 	tab = "> ",
 	trail = "-",

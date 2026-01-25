@@ -6,6 +6,7 @@
   "cmake-tools.nvim": { "branch": "master", "commit": "16dfb08bb2d6bf25a6c9b4c1c22feef4a835ba3c" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },
   "cmp-git": { "branch": "main", "commit": "b24309c386c9666c549a1abaedd4956541676d06" },
+  "cmp-lsp-rimels": { "branch": "main", "commit": "238c2790c4f8403856f9011182b8d966a889cbc0" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "cbc7b02bb99fae35cb42f514762b89b5126651ef" },
   "cmp-path": { "branch": "main", "commit": "c642487086dbd9a93160e1679a1327be111cbc25" },
   "conform.nvim": { "branch": "master", "commit": "c2526f1cde528a66e086ab1668e996d162c75f4f" },

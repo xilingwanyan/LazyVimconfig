@@ -11,7 +11,7 @@ return {
 
         --reset function LazyVim.lualine.pretty_path
         ---@param opts? {modified_hl: string?, directory_hl: string?, filename_hl: string?, modified_sign: string?, readonly_icon: string?}
-        LazyVim.lualine.pretty_path = function(opts)
+        LazyVim.lualine.pretty_path_name = function(opts)
             opts = vim.tbl_extend("force", {
                 modified_hl = "MatchParen",
                 directory_hl = "",
@@ -69,7 +69,7 @@ return {
                         },
                     },
                     { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-                    { LazyVim.lualine.pretty_path() },
+                    { LazyVim.lualine.pretty_path_name() },
                 },
                 lualine_x = {
                     Snacks.profiler.status(),
@@ -91,6 +91,31 @@ return {
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = function() return { fg = Snacks.util.color("Debug") } end,
           },
+                },
+                lualine_y = {
+                    { "progress", separator = " ", padding = { left = 1, right = 0 } },
+                    { "location", padding = { left = 0, right = 1 } },
+                },
+                lualine_z = {
+                    -- function()
+                    --   return " " .. os.date("%R")
+                    -- end,
+                    {
+                        function()
+                            return " "
+                        end,
+                    },
+                },
+            },
+            extensions = { "neo-tree", "lazy", "fzf" },
+            winbar = {
+                lualine_a = {
+                    function()
+                        return ""
+                    end,
+                },
+                lualine_c = {},
+                lualine_x = {
           -- stylua: ignore
           {
             require("lazy.status").updates,
@@ -116,29 +141,18 @@ return {
                         end,
                     },
                 },
-                lualine_y = {
-                    { "progress", separator = " ", padding = { left = 1, right = 0 } },
-                    { "location", padding = { left = 0, right = 1 } },
-                },
-                lualine_z = {
-                    -- function()
-                    --   return " " .. os.date("%R")
-                    -- end,
-                    {
-                        function()
-                            return " "
-                        end,
-                    },
-                },
             },
-            extensions = { "neo-tree", "lazy", "fzf" },
-            winbar = {
+            inactive_winbar = {
                 lualine_a = {
                     function()
-                        return ""
+                        return ""
                     end,
                 },
-                lualine_c = {},
+                lualine_c = {
+                    LazyVim.lualine.root_dir(),
+                    { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+                    { LazyVim.lualine.pretty_path() },
+                }
             },
         }
 

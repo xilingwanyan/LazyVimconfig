@@ -1,7 +1,6 @@
 return {
-  "stevearc/conform.nvim",
-  opts = {
-        format_on_save = false
-    }
+    "stevearc/conform.nvim",
+    opts = {
+        format_on_save = false,
+    },
 }
-

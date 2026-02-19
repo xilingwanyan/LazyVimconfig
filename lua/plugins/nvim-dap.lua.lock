@@ -1,0 +1,45 @@
+return {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+        {
+            "jbyuki/one-small-step-for-vimkind",
+      -- stylua: ignore
+      config = function()
+        local dap = require("dap")
+        dap.configurations.rust = {
+            -- {
+            --     type = "codelldb",
+            --     request = "attach",
+            --     name = "LLDB: attach-port:2159",
+            --     program = function()
+            --         return vim.fn.input(':', vim.fn.getcwd() .. '/target/debug/', 'file')
+            --     end,
+            --     target = "127.0.0.1:2159",
+            --
+            {
+                name = "Remote launch",
+                cwd = "${workspaceFolder}",
+                type = "codelldb",
+                request = "launch",
+sourceMap = {
+                    ["."] = "${workspaceFolder}", 
+                },
+                targetCreateCommands = function()
+                    local path = vim.fn.input('bin path', vim.fn.getcwd() .. '/target/debug/', 'file')
+                    return { "target create " .. path }
+                end,
+                processCreateCommands = {
+                    "gdb-remote 127.0.0.1:2159",
+"breakpoint set --name main",
+"continue",
+                        },
+                stopOnEntry = false
+                -- env = {
+                --     PATH: "..."
+                -- }
+            }
+        }
+      end,
+        },
+    },
+}

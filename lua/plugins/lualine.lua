@@ -85,12 +85,6 @@ return {
             cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
             color = function() return { fg = Snacks.util.color("Constant") } end,
           },
-          -- stylua: ignore
-          {
-            function() return "  " .. require("dap").status() end,
-            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = function() return { fg = Snacks.util.color("Debug") } end,
-          },
                 },
                 lualine_y = {
                     { "progress", separator = " ", padding = { left = 1, right = 0 } },
@@ -116,6 +110,12 @@ return {
                 },
                 lualine_c = {},
                 lualine_x = {
+          -- stylua: ignore
+          {
+            function() return "  " .. require("dap").status() end,
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = function() return { fg = Snacks.util.color("Debug") } end,
+          },
           -- stylua: ignore
           {
             require("lazy.status").updates,
@@ -172,7 +172,7 @@ return {
                             end
                         end,
                     },
-                }
+                },
             },
         }
 
@@ -199,4 +199,3 @@ return {
         return opts
     end,
 }
-

@@ -5,6 +5,20 @@ return {
             {
                 elements = {
                     {
+                        id = "repl",
+                        size = 0.5,
+                    },
+                    {
+                        id = "console",
+                        size = 0.5,
+                    },
+                },
+                position = "left",
+                size = 9999,
+            },
+            {
+                elements = {
+                    {
                         id = "scopes",
                         size = 0.5,
                     },
@@ -30,20 +44,9 @@ return {
                 position = "left",
                 size = 9999,
             },
-            {
-                elements = {
-                    {
-                        id = "repl",
-                        size = 0.5,
-                    },
-                    {
-                        id = "console",
-                        size = 0.5,
-                    },
-                },
-                position = "left",
-                size = 9999,
-            },
         },
     },
+    config = function(_, opts)
+        require("dapui").setup(opts)
+    end,
 }

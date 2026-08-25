@@ -3,7 +3,14 @@ return {
     opts = {
         cmdline = {
             view = "cmdline_popup",
+            format = {
+                input = {
+                    view = "confirm",
+                    icon = "󰥻 ",
+                },
+            },
         },
+
         views = {
             cmdline_popup = {
                 position = {

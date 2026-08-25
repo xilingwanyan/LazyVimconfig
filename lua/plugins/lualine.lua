@@ -9,7 +9,7 @@ return {
 
         vim.o.laststatus = vim.g.lualine_laststatus
 
-        --reset function LazyVim.lualine.pretty_path
+        -- reset function LazyVim.lualine.pretty_path
         ---@param opts? {modified_hl: string?, directory_hl: string?, filename_hl: string?, modified_sign: string?, readonly_icon: string?}
         LazyVim.lualine.pretty_path_name = function(opts)
             opts = vim.tbl_extend("force", {
@@ -43,7 +43,7 @@ return {
                 return ret .. readonly
             end
         end
-        --OK
+        -- OK
         local opts = {
             options = {
                 theme = "auto",

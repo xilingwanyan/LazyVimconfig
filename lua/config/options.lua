@@ -19,9 +19,9 @@ opt.shell = "/data/data/com.termux/files/usr/bin/bash"
 opt.clipboard = ""
 opt.numberwidth = 4
 opt.listchars = {
-  tab = "> ",
-  trail = "-",
-  extends = ">",
-  precedes = "<",
-  nbsp = "+",
+    tab = "> ",
+    trail = "-",
+    extends = ">",
+    precedes = "<",
+    nbsp = "+",
 }
